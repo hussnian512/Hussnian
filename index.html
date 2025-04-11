@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Website">
+    <title>Portfolio Website</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Adding new Google Fonts - Montserrat and Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Testimonials CSS */
+        .shadow-effect {
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #ECECEC;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+        }
+        #customers-testimonials .shadow-effect p {
+            font-family: inherit;
+            font-size: 17px;
+            line-height: 1.5;
+            margin: 0 0 17px 0;
+            font-weight: 300;
+        }
+        .testimonial-name {
+            margin: -17px auto 0;
+
+            font-size: 15px;
+            display: table;
+            width: auto;
+            background: #3190E7;
+            padding: 9px 35px;
+            border-radius: 12px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+        }
+        #customers-testimonials .item {
+            text-align: center;
+            padding: 50px;
+            margin-bottom: 80px;
+            opacity: .2;
+            -webkit-transform: scale3d(0.8, 0.8, 1);
+            transform: scale3d(0.8, 0.8, 1);
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        #customers-testimonials .owl-item.active.center .item {
+            opacity: 1;
+            -webkit-transform: scale3d(1.0, 1.0, 1);
+            transform: scale3d(1.0, 1.0, 1);
+        }
+        .owl-carousel .owl-item img {
+            transform-style: preserve-3d;
+            max-width: 90px;
+            margin: 0 auto 17px;
+        }
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+            background: #3190E7;
+            transform: translate3d(0px, -50%, 0px) scale(0.7);
+        }
+        #customers-testimonials.owl-carousel .owl-dots {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot {
+            display: inline-block;
+        }
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+            background: #3190E7;
+            display: inline-block;
+            height: 20px;
+            margin: 0 2px 5px;
+            transform: translate3d(0px, -50%, 0px) scale(0.3);
+            transform-origin: 50% 50% 0;
+            transition: all 250ms ease-out 0s;
+            width: 20px;
+        }
+        .testimonials {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: #fff;
+        }
+        .testimonials .section-header h2 {
+            color: #ffffff !important;
+        }
+        .testimonials .shadow-effect {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .testimonials .shadow-effect p {
+            color: #e0e0e0 !important;
+        }
+        .testimonial-name {
+            background: #00ff9d;
+            color: #121212;
+            font-weight: 600;
+        }
+        .img-circle {
+            border-radius: 50%;
+            border: 3px solid #00ff9d;
+        }
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+            background: #00ff9d;
+        }
+        #customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+            background: rgba(0, 255, 157, 0.3);
+        }
+    </style>
+    
+    <!-- Font styling -->
+    <style>
+        /* Global Font Settings */
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .logo, .nav-link, .btn, .testimonial-name {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1 {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        
+        h3 {
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+        
+        .expertise-card h3, .portfolio-content h3, .skill-card h3 {
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        
+        .btn {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .testimonial-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Hussnain<span style="color: white;">.</span></a>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#expertise" class="nav-link">Expertise</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </div>
+                <button class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">Hussnain</h1>
+                        <h2 class="display-6 mb-4">Full Stack Developer</h2>
+                        <p class="lead mb-4">Front-End Expert | React | Next | React Native | Tailwind<br>
+                        Senior Full Stack Developer | MERN Stack | Laravel | Shopify | AI/ML</p>
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn btn-outline-light">View My Work</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image w-75 mx-auto">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Profile Image" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="About Me" class="img-fluid rounded-3">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content">
+                        <h2 class="display-5 fw-bold mb-4">About Me</h2>
+                        <p class="lead mb-4">I'm Hussnain, a Senior Full Stack Developer specializing in front-end technologies with expertise in React, Next.js, and React Native.</p>
+                        <p class="mb-4">With deep knowledge in both front-end and back-end development, I create scalable and efficient web applications using modern technologies. My experience spans across MERN stack, Laravel, Shopify development, and AI/ML integration.</p>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="about-info">
+                                    <h4 class="fw-bold">Specializations:</h4>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle  me-2"></i> Front-End Development</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> Full Stack Development</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> Shopify Solutions</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> AI/ML Integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-info">
+                                    <h4 class="fw-bold">Tech Stack:</h4>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check-circle  me-2"></i> React, Next.js, React Native</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> Node.js, Express, MongoDB</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> Laravel, GraphQL, WebSocket</li>
+                                        <li><i class="fas fa-check-circle  me-2"></i> TensorFlow, PyTorch</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <h4 class="fw-bold mb-3">Key Skills:</h4>
+                            <div class="skill-tags">
+                                <span class="badge  rounded-pill mb-2 me-2">HTML5/CSS3</span>
+                                <span class="badge  rounded-pill mb-2 me-2">JavaScript/TypeScript</span>
+                                <span class="badge  rounded-pill mb-2 me-2">React.js</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Next.js</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Node.js</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Express.js</span>
+                                <span class="badge  rounded-pill mb-2 me-2">MongoDB</span>
+                                <span class="badge  rounded-pill mb-2 me-2">TailwindCSS</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Laravel</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Shopify</span>
+                                <span class="badge  rounded-pill mb-2 me-2">GraphQL</span>
+                                <span class="badge  rounded-pill mb-2 me-2">Docker</span>
+                                <span class="badge  rounded-pill mb-2 me-2">AWS</span>
+                                <span class="badge  rounded-pill mb-2 me-2">TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Expertise</h2>
+                <p>Specialized skills and technologies</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="expertise-card animate">
+                        <div class="expertise-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/6213/6213731.png" alt="Full-Stack Development">
+                        </div>
+                        <h3>Full-Stack Development</h3>
+                        <p>End-to-end web application development with modern technologies and best practices.</p>
+                        <div class="expertise-list">
+                            <h4>Front-End</h4>
+                            <ul>
+                                <li>React.js / Next.js</li>
+                                <li>Vue.js</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                            
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Node.js / Express</li>
+                                <li>PHP / Laravel</li>
+                                <li>RESTful APIs</li>
+                                <li>GraphQL</li>
+                            </ul>
+                            
+                            <h4>Databases</h4>
+                            <ul>
+                                <li>MongoDB</li>
+                                <li>MySQL / PostgreSQL</li>
+                                <li>Firebase</li>
+                            </ul>
+                            
+                            <h4>Cloud & DevOps</h4>
+                            <ul>
+                                <li>AWS / Azure</li>
+                                <li>Docker</li>
+                                <li>CI/CD Pipelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="expertise-card animate">
+                        <div class="expertise-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" alt="Shopify & E-commerce">
+                        </div>
+                        <h3>Shopify & E-commerce</h3>
+                        <p>Custom Shopify store development, theme customization, and e-commerce solutions.</p>
+                        <div class="expertise-list">
+                            <h4>Shopify Development</h4>
+                            <ul>
+                                <li>Custom Theme Development</li>
+                                <li>Shopify Plus Customization</li>
+                                <li>Liquid Programming</li>
+                                <li>Theme Optimization</li>
+                            </ul>
+                            
+                            <h4>E-commerce</h4>
+                            <ul>
+                                <li>Conversion Optimization</li>
+                                <li>Payment Gateway Integration</li>
+                                <li>Product Customization</li>
+                                <li>Inventory Management</li>
+                            </ul>
+                            
+                            <h4>Store Migration</h4>
+                            <ul>
+                                <li>WooCommerce to Shopify</li>
+                                <li>Magento to Shopify</li>
+                                <li>Data Migration</li>
+                            </ul>
+                            
+                            <h4>App Development</h4>
+                            <ul>
+                                <li>Custom Shopify Apps</li>
+                                <li>Third-party Integrations</li>
+                                <li>Analytics Implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="expertise-card animate">
+                        <div class="expertise-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="AI/ML Technologies">
+                        </div>
+                        <h3>AI/ML Technologies</h3>
+                        <p>Integration of artificial intelligence and machine learning solutions for modern applications.</p>
+                        <div class="expertise-list">
+                            <h4>Python Stack</h4>
+                            <ul>
+                                <li>TensorFlow / PyTorch</li>
+                                <li>Scikit-learn</li>
+                                <li>Pandas / NumPy</li>
+                                <li>Flask / Django</li>
+                            </ul>
+                            
+                            <h4>NLP</h4>
+                            <ul>
+                                <li>NLTK / spaCy</li>
+                                <li>Text Classification</li>
+                                <li>Sentiment Analysis</li>
+                                <li>Chatbot Development</li>
+                            </ul>
+                            
+                            <h4>Deployment</h4>
+                            <ul>
+                                <li>ML Model APIs</li>
+                                <li>AWS SageMaker</li>
+                                <li>Model Optimization</li>
+                            </ul>
+                            
+                            <h4>Data Visualization</h4>
+                            <ul>
+                                <li>Matplotlib / Seaborn</li>
+                                <li>D3.js</li>
+                                <li>Interactive Dashboards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Portfolio</h2>
+                <p>Recent projects and work</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button data-filter="all" class="active">All</button>
+                <button data-filter="web-development">Web APP</button>
+                <button data-filter="Python-ai">Python AI</button>
+                <button data-filter="ui-design">UI Design</button>
+                <button data-filter="shopify">Shopify</button>
+                <button data-filter="ai-ml">AI/ML</button>
+            </div>
+            
+            <div class="row portfolio-grid">
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item Python-ai">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/TIKA.png" alt="TIKA Python AI App">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>TIKA APP</h3>
+                                    <p>AI-powered platform built with Python and Django to streamline refugee aid and logistics.</p>
+                                    <a href="https://tika.gov.tr/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item Python-ai">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/React Laravel we sfot you.png" alt="WE SOFT YOU Python AI App">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>WE SOFT YOU APP</h3>
+                                    <p>Radius AI – a smart video analytics system for retail environments using Python & AI.</p>
+                                    <a href="https://wesoftyou.com/cases/radius-ai/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item web-development">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/Mathmania.png" alt="Mathmania Web App">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>MATHMANIA WEB APP</h3>
+                                    <p>Interactive learning platform promoting math excellence through nationwide competitions.</p>
+                                    <a href="https://mathmania.pk/champions-board" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item web-development">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/Layali.png" alt="Layali Web App">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>LAYALI WEB APP</h3>
+                                    <p>Luxury fragrance eCommerce store blending Middle Eastern heritage with modern elegance.</p>
+                                    <a href="https://layaliart.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item web-development">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/ALSHAMS.png" alt="ALSHAMS Web App">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>ALSHAMS WEB APP</h3>
+                                    <p>Corporate website for Al Shams Corporation, showcasing their services and projects.</p>
+                                    <a href="https://www.alshamscorporation.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item ui-design">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mobile App UI Design">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>Mobile App UI Design</h3>
+                                    <p>UI/UX design for a fitness tracking mobile application</p>
+                                    <a href="#" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item shopify">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/ldouble.png" alt="la double">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>Ladoublej Fashion Store</h3>
+                                    <p>Complete Shopify theme design and development done by me, featuring advanced product filtering and a modern user experience.</p>
+                                    
+                                    <a href="https://www.ladoublej.com/en/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item shopify">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/LOBJECT.png" alt="la double">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>LOBJECT Fashion Store</h3>
+                                    <p>Crafted from scratch — a fully custom Shopify theme designed and developed by me, featuring seamless product filtering and an elevated shopping experience.</p>
+                                    
+                                    <a href="https://www.l-objet.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item shopify">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/Luvier.png" alt="la double">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>Luvier Fashion Store</h3>
+                                    <p>Built with precision — a bespoke Shopify theme developed to deliver smooth navigation, advanced filters, and a sleek shopping interface.</p>
+                                    
+                                    <a href="hhttps://sylvieboutique.de/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item shopify">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/Margan.png" alt="la double">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>Marjjan Fashion Store</h3>
+                                    <p>From concept to code — a fully tailored Shopify theme with optimized product browsing and a refined shopping journey.</p>
+                                    
+                                    <a href="https://www.marjjan.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item shopify">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/teamLtd.png" alt="la double">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>Team Ltd Fashion Store</h3>
+                                    <p>Designed with user experience in mind — a custom Shopify theme integrating smart filtering and a bold, fashion-forward layout.</p>                                    
+                                    <a href="https://teamltd.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item ai-ml">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/HHAPPY DANI React laravek.png" alt="AI Chatbot">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                <h3>OH HAPPY DANI</h3>
+                                    <p>An art-driven platform inspiring advocates through creative content on justice and empathy.</p>
+                                    <a href="https://ohhappydani.com" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item ai-ml">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/React CROWN&PAW.png" alt="Crown & Paw">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>CROWN & PAW</h3>
+                                    <p>Custom pet portraits that transform your pet’s photo into royal-inspired artwork.</p>
+                                    <a href="https://crownandpaw.com/collections/modern-pet-portraits-collection" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item ai-ml">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/React Laravel we sfot you.png" alt="WESOFTYOU">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>WESOFTYOU</h3>
+                                    <p>AI and Web3 development company delivering custom digital products across industries.</p>
+                                    <a href="https://wesoftyou.com/cases/radius-ai/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item ai-ml">
+                    <div class="portfolio-card animate">
+                        <div class="portfolio-image">
+                            <img src="images/Reactlaravel Empowering.png" alt="EMPERIA VR">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h3>EMPERIA VR</h3>
+                                    <p>Virtual reality platform that creates immersive shopping experiences for luxury brands.</p>
+                                    <a href="https://emperiavr.com/" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Technologies Section -->
+    <section id="skills-technologies" class="skills-technologies py-5" style="background: linear-gradient(135deg, #0a0a0a 0%, #121212 100%) !important; visibility: visible !important;">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3" style="color: #ffffff !important;">Skills & Technologies</h2>
+                <p class="lead" style="color: #b8b8b8 !important;">A comprehensive overview of my technical expertise</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Skill Card 1 - Frontend -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card" style="background: rgba(26, 26, 26, 0.5); border: 1px solid rgba(0, 255, 157, 0.1); border-radius: 15px; padding: 1.5rem; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="skill-icon mb-3" style="width: 70px; height: 70px; background: rgba(0, 255, 157, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-react" style="font-size: 2rem; color: #00ff9d;"></i>
+                        </div>
+                        <h3 class="mb-2" style="color: #ffffff !important; font-size: 1.4rem;">Frontend Development</h3>
+                        <p class="mb-3" style="color: #e0e0e0 !important;">Expert in creating responsive, intuitive user interfaces with modern JavaScript frameworks.</p>
+                        <ul style="color: #e0e0e0; list-style-type: none; padding-left: 0;">
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>React.js & Next.js</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>TypeScript / JavaScript</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>HTML5 / CSS3</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>TailwindCSS / Bootstrap</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>React Native</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 - Backend -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card" style="background: rgba(26, 26, 26, 0.5); border: 1px solid rgba(0, 255, 157, 0.1); border-radius: 15px; padding: 1.5rem; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="skill-icon mb-3" style="width: 70px; height: 70px; background: rgba(0, 255, 157, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-node-js" style="font-size: 2rem; color: #00ff9d;"></i>
+                        </div>
+                        <h3 class="mb-2" style="color: #ffffff !important; font-size: 1.4rem;">Backend & Database</h3>
+                        <p class="mb-3" style="color: #e0e0e0 !important;">Building robust server-side applications and efficient database architectures.</p>
+                        <ul style="color: #e0e0e0; list-style-type: none; padding-left: 0;">
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>Node.js / Express.js / NestJS</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>Laravel / PHP</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>MongoDB / PostgreSQL / MySQL</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>GraphQL / REST APIs</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>WebSocket / Real-time Apps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 - AI/ML & Cloud -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card" style="background: rgba(26, 26, 26, 0.5); border: 1px solid rgba(0, 255, 157, 0.1); border-radius: 15px; padding: 1.5rem; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="skill-icon mb-3" style="width: 70px; height: 70px; background: rgba(0, 255, 157, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-brain" style="font-size: 2rem; color: #00ff9d;"></i>
+                        </div>
+                        <h3 class="mb-2" style="color: #ffffff !important; font-size: 1.4rem;">AI/ML & Cloud</h3>
+                        <p class="mb-3" style="color: #e0e0e0 !important;">Integrating machine learning solutions and managing cloud infrastructure.</p>
+                        <ul style="color: #e0e0e0; list-style-type: none; padding-left: 0;">
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>TensorFlow / PyTorch</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>NLP / Computer Vision</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>AWS / Google Cloud / Azure</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>Docker / Deployment</li>
+                            <li><i class="fas fa-check-circle" style="color: #00ff9d; margin-right: 8px;"></i>CI/CD Pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="additional-skills" style="background: rgba(26, 26, 26, 0.5); border: 1px solid rgba(0, 255, 157, 0.1); border-radius: 15px; padding: 1.5rem;">
+                        <h3 class="text-center mb-4" style="color: #ffffff !important;">Additional Expertise</h3>
+                        <div class="skill-tags text-center">
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Shopify</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#E-commerce</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#MobileAppDevelopment</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#WebDevelopment</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#DataScience</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Sass</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#GatsbyJS</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#DynamoDB</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Netlify</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Vercel</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Git</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#Cypress</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#CMSDevelopment</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#SaaS</span>
+                            <span class="badge" style="background: rgba(0, 255, 157, 0.1); color: #e0e0e0; border: 1px solid rgba(0, 255, 157, 0.3); margin: 5px; padding: 8px 15px; border-radius: 20px; font-weight: 500;">#AgileDevelopment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center mb-4">
+                    <h2 class="fw-bold">Client Testimonials</h2>
+                    <p>What clients say about my work and collaboration</p>
+                </div>
+                <div class="col-sm-12">
+                    <div id="customers-testimonials" class="owl-carousel">
+                        <!--TESTIMONIAL 1 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                                <p>"The developer showed dedication and enthusiasm throughout the project. Willing to learn and take on challenges. Wishing them success in their future work."</p>
+                            </div>
+                            <div class="testimonial-name">Laravel Developer</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 1 -->
+                        <!--TESTIMONIAL 2 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                                <p>"Good as always. I'll be coming back."</p>
+                            </div>
+                            <div class="testimonial-name">React JS Developer</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 2 -->
+                        <!--TESTIMONIAL 3 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+                                <p>"Wonderful experience!"</p>
+                            </div>
+                            <div class="testimonial-name">Shopify Website</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 3 -->
+                        <!--TESTIMONIAL 4 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="images/Olivier.jpg" alt="">
+                                <p>"Hussnain was incredibly responsive, promptly addressing my requests efficiently. His work was high quality, and he demonstrated both skill and attention to detail. I was impressed with his dedication."</p>
+                            </div>
+                            <div class="testimonial-name">Shopify Multimple Stores</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 4 -->
+                        <!--TESTIMONIAL 5 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="images/Rafael Raoult.jpg" alt="">
+                                <p>"Second time I worked with Hussnain - good and reliable as always."</p>
+                            </div>
+                            <div class="testimonial-name">Shopify Product Pages</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 5 -->
+                        <!--TESTIMONIAL 6 -->
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img class="img-circle" src="images/Nicholas Chiariello.jpg" alt="">
+                                <p>"Hussnain did an absolutely amazing job on building our Shopify store! He went above and beyond our expectations, delivering everything we requested and more. The product pages are beautifully designed."</p>
+                            </div>
+                            <div class="testimonial-name">Shopify Developer</div>
+                        </div>
+                        <!--END OF TESTIMONIAL 6 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF TESTIMONIALS -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-logo">
+                        <a href="#">Portfolio</a>
+                    </div>
+                    <p>Creating high-quality digital experiences for businesses worldwide.</p>
+                </div>
+                <div class="col-md-6 footer-links">
+                    <div class="quick-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#expertise">Expertise</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            "use strict";
+            //  TESTIMONIALS CAROUSEL HOOK
+            $('#customers-testimonials').owlCarousel({
+                loop: true,
+                center: true,
+                items: 3,
+                margin: 0,
+                autoplay: true,
+                dots: true,
+                autoplayTimeout: 2000,
+                smartSpeed: 450,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1170: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
