@@ -141,7 +141,9 @@ section {
     text-transform: uppercase;
     position: relative;
 }
-
+.main_pop {
+    display: none;
+}
 .section-header h2::after {
     content: '';
     position: absolute;
@@ -917,9 +919,7 @@ section {
     display: block;
     margin-top: auto;
 }
-.main_pop {
-    display: none;
-}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 991.98px) {
     h1 {
